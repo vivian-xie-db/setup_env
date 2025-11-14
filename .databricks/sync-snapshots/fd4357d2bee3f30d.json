@@ -1,0 +1,50 @@
+{
+  "version": "v1",
+  "host": "https://adb-2548836972759138.18.azuredatabricks.net",
+  "remote_path": "/Workspace/Users/wenwen.xie@databricks.com/hello-world",
+  "last_modified_times": {
+    ".gitignore": "2025-10-21T17:15:36-04:00",
+    "README.md": "2025-10-21T17:55:57-04:00",
+    "app.yaml": "2025-10-21T17:40:16-04:00",
+    "instructions/01-setup-local_env.md": "2025-10-09T08:02:44-04:00",
+    "instructions/02-build-app.md": "2025-10-21T17:57:08-04:00",
+    "instructions/03-databricks-asset-bundle.md": "2025-10-27T21:11:51.946223553-04:00",
+    "instructions/Application Design Document Template.md": "2025-10-16T17:58:45-04:00",
+    "instructions/databricks_cli_llm.txt": "2025-10-19T16:15:24-04:00",
+    "requirements.txt": "2025-10-21T17:33:14-04:00",
+    "scripts/deploy.sh": "2025-10-27T20:46:14.013497284-04:00",
+    "scripts/setup.sh": "2025-10-27T20:46:21.449179337-04:00",
+    "test_workspace_client.py": "2025-10-07T21:11:34-04:00",
+    "tmp-deploy-logs.txt": "2025-11-13T12:47:10.744927413-05:00"
+  },
+  "local_to_remote_names": {
+    ".gitignore": ".gitignore",
+    "README.md": "README.md",
+    "app.yaml": "app.yaml",
+    "instructions/01-setup-local_env.md": "instructions/01-setup-local_env.md",
+    "instructions/02-build-app.md": "instructions/02-build-app.md",
+    "instructions/03-databricks-asset-bundle.md": "instructions/03-databricks-asset-bundle.md",
+    "instructions/Application Design Document Template.md": "instructions/Application Design Document Template.md",
+    "instructions/databricks_cli_llm.txt": "instructions/databricks_cli_llm.txt",
+    "requirements.txt": "requirements.txt",
+    "scripts/deploy.sh": "scripts/deploy.sh",
+    "scripts/setup.sh": "scripts/setup.sh",
+    "test_workspace_client.py": "test_workspace_client.py",
+    "tmp-deploy-logs.txt": "tmp-deploy-logs.txt"
+  },
+  "remote_to_local_names": {
+    ".gitignore": ".gitignore",
+    "README.md": "README.md",
+    "app.yaml": "app.yaml",
+    "instructions/01-setup-local_env.md": "instructions/01-setup-local_env.md",
+    "instructions/02-build-app.md": "instructions/02-build-app.md",
+    "instructions/03-databricks-asset-bundle.md": "instructions/03-databricks-asset-bundle.md",
+    "instructions/Application Design Document Template.md": "instructions/Application Design Document Template.md",
+    "instructions/databricks_cli_llm.txt": "instructions/databricks_cli_llm.txt",
+    "requirements.txt": "requirements.txt",
+    "scripts/deploy.sh": "scripts/deploy.sh",
+    "scripts/setup.sh": "scripts/setup.sh",
+    "test_workspace_client.py": "test_workspace_client.py",
+    "tmp-deploy-logs.txt": "tmp-deploy-logs.txt"
+  }
+}

@@ -1,0 +1,11 @@
+# Databricks Apps Configuration
+# Based on: https://docs.databricks.com/aws/en/dev-tools/databricks-apps/app-runtime
+
+# Custom command to run the Streamlit app
+command: ["streamlit", "run", "app.py", "--server.port", "8080"]
+
+# Environment variables for the application
+env:
+  # SQL Warehouse ID - hardcoded for this specific warehouse
+  - name: 'DATABRICKS_WAREHOUSE_ID'
+    value: '30d6e63b35f828c5'

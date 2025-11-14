@@ -1,0 +1,542 @@
+# Databricks CLI Commands Reference (llm.txt)
+
+> Comprehensive reference for Databricks CLI commands (v0.205+)
+> Base documentation: https://docs.databricks.com/aws/en/dev-tools/cli/commands
+
+## Command Structure
+
+```bash
+databricks <command-group> <command-name> [subcommand] [flags]
+databricks <command-group> -h                    # Show help for command group
+databricks <command-group> <command> -h          # Show help for specific command
+```
+
+## Global Flags
+
+Available to all commands:
+- `--debug` - Enable debug logging
+- `-h, --help` - Display help
+- `--log-file string` - File to write output logs to
+- `--log-format {text|json}` - Log format type (default: text)
+- `--log-level string` - Log format level
+- `-o, --output {text|json}` - Command output type (default: text)
+- `-p, --profile string` - Profile name from ~/.databrickscfg (default: DEFAULT)
+- `--progress-format {default|append|inplace|json}` - Progress display format
+- `-t, --target string` - Bundle target to use
+
+---
+
+## Workspace Commands
+
+### fs - File System Operations
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/fs-commands  
+**Commands**: `cat`, `cp`, `ls`, `mkdir`, `rm`  
+**Purpose**: Manage files and file systems in Databricks workspace
+
+### git-credentials - Git Token Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/git-credentials-commands  
+**Commands**: `create`, `delete`, `get`, `list`, `update`  
+**Purpose**: Register personal access tokens for Git operations
+
+### repos - Repository Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/repos-commands  
+**Commands**: `create`, `delete`, `get`, `list`, `update`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Manage Git repositories in workspace
+
+### secrets - Secrets Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/secrets-commands  
+**Commands**: `create-scope`, `delete-acl`, `delete-scope`, `delete-secret`, `get-acl`, `get-secret`, `list-acls`, `list-scopes`, `list-secrets`, `put-acl`, `put-secret`  
+**Purpose**: Manage secrets, secret scopes, and access permissions
+
+### workspace - Workspace Objects
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/workspace-commands  
+**Commands**: `delete`, `export`, `export-dir`, `get-status`, `import`, `import-dir`, `list`, `mkdirs`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Manage notebooks and folders in workspace
+
+---
+
+## Compute Commands
+
+### cluster-policies - Cluster Policy Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/cluster-policies-commands  
+**Commands**: `create`, `delete`, `edit`, `get`, `list`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Control cluster configuration based on rules
+
+### clusters - Cluster Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/clusters-commands  
+**Commands**: `change-owner`, `create`, `delete`, `edit`, `events`, `get`, `list`, `list-node-types`, `list-zones`, `permanent-delete`, `pin`, `resize`, `restart`, `spark-versions`, `start`, `unpin`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Create, start, edit, list, terminate, and delete clusters
+
+### global-init-scripts - Global Initialization Scripts
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/global-init-scripts-commands  
+**Commands**: `create`, `delete`, `get`, `list`, `update`  
+**Purpose**: Configure global initialization scripts for workspace
+
+### instance-pools - Instance Pool Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/instance-pools-commands  
+**Commands**: `create`, `delete`, `edit`, `get`, `list`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Manage ready-to-use cloud instances to reduce cluster start times
+
+### instance-profiles - Instance Profile Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/instance-profiles-commands  
+**Commands**: `add`, `edit`, `list`, `remove`  
+**Purpose**: Add, list, and remove instance profiles for cluster launches
+
+### libraries - Library Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/libraries-commands  
+**Commands**: `all-cluster-statuses`, `cluster-status`, `install`, `uninstall`  
+**Purpose**: Install, uninstall, and get status of libraries on clusters
+
+### policy-families - Policy Family Viewing
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/policy-families-commands  
+**Commands**: `get`, `list`  
+**Purpose**: View available policy families
+
+---
+
+## Jobs Commands
+
+### jobs - Job Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/jobs-commands  
+**Commands**: `cancel-all-runs`, `cancel-run`, `create`, `delete`, `delete-run`, `export-run`, `get`, `get-run`, `get-run-output`, `list`, `list-runs`, `repair-run`, `reset`, `run-now`, `submit`, `update`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Manage Databricks jobs and job runs
+
+---
+
+## Lakeflow Declarative Pipelines Commands
+
+### pipelines - Pipeline Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/pipelines-commands  
+**Commands**: `create`, `delete`, `get`, `get-update`, `list-pipeline-events`, `list-pipelines`, `list-updates`, `start-update`, `stop`, `update`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Create, edit, delete, start, and view pipeline details
+
+---
+
+## Machine Learning Commands
+
+### experiments - MLflow Experiment Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/experiments-commands  
+**Commands**: `create-experiment`, `create-run`, `delete-experiment`, `delete-run`, `delete-runs`, `delete-tag`, `get-by-name`, `get-experiment`, `get-history`, `get-run`, `list-artifacts`, `list-experiments`, `log-batch`, `log-inputs`, `log-metric`, `log-model`, `log-param`, `restore-experiment`, `restore-run`, `restore-runs`, `search-experiments`, `search-runs`, `set-experiment-tag`, `set-tag`, `update-experiment`, `update-run`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Interact with MLflow experiments and runs
+
+### model-registry - Workspace Model Registry
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/model-registry-commands  
+**Commands**: `approve-transition-request`, `create-comment`, `create-model`, `create-model-version`, `create-transition-request`, `create-webhook`, `delete-comment`, `delete-model`, `delete-model-tag`, `delete-model-version`, `delete-model-version-tag`, `delete-transition-request`, `delete-webhook`, `get-latest-versions`, `get-model`, `get-model-version`, `get-model-version-download-uri`, `list-models`, `list-transition-requests`, `list-webhooks`, `reject-transition-request`, `rename-model`, `search-model-versions`, `search-models`, `set-model-tag`, `set-model-version-tag`, `test-registry-webhook`, `transition-stage`, `update-comment`, `update-model`, `update-model-version`, `update-webhook`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Manage models in Workspace Model Registry
+
+---
+
+## Real-time Serving Commands
+
+### serving-endpoints - Model Serving Endpoints
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/serving-endpoints-commands  
+**Commands**: `build-logs`, `create`, `delete`, `export-metrics`, `get`, `list`, `logs`, `patch`, `put`, `query`, `update-config`, `get-permission-levels`, `get-permissions`, `set-permissions`, `update-permissions`  
+**Purpose**: Create, update, and delete model serving endpoints
+
+---
+
+## Identity and Access Management Commands
+
+### account - Account Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/account-commands  
+**Purpose**: Manage Databricks accounts, identity, and access
+
+### current-user - Current User Information
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/current-user-commands  
+**Purpose**: Retrieve current user information
+
+### groups - Group Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/groups-commands  
+**Purpose**: Manage workspace and account groups
+
+### service-principals - Service Principal Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/service-principals-commands  
+**Purpose**: Manage service principals
+
+### users - User Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/users-commands  
+**Purpose**: Manage workspace and account users
+
+### workspace-assignment - Workspace Assignment
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/workspace-assignment-commands  
+**Purpose**: Manage workspace assignments
+
+---
+
+## SQL-related Commands
+
+### alerts - SQL Alert Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/alerts-commands  
+**Purpose**: Manage SQL alerts
+
+### dashboards - Dashboard Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/dashboards-commands  
+**Purpose**: Manage SQL dashboards
+
+### data-sources - Data Source Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/data-sources-commands  
+**Purpose**: Manage SQL data sources
+
+### queries - SQL Query Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/queries-commands  
+**Purpose**: Manage SQL queries
+
+### query-history - Query History
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/query-history-commands  
+**Purpose**: Access SQL query history
+
+### query-visualizations - Query Visualization Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/query-visualizations-commands  
+**Purpose**: Manage query visualizations
+
+### warehouses - SQL Warehouse Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/warehouses-commands  
+**Purpose**: Manage SQL warehouses
+
+---
+
+## Unity Catalog Commands
+
+### catalogs - Catalog Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/catalogs-commands  
+**Purpose**: Manage Unity Catalog catalogs
+
+### connections - Connection Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/connections-commands  
+**Purpose**: Manage Unity Catalog connections
+
+### external-locations - External Location Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/external-locations-commands  
+**Purpose**: Manage Unity Catalog external locations
+
+### functions - Function Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/functions-commands  
+**Purpose**: Manage Unity Catalog functions
+
+### grants - Grant Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/grants-commands  
+**Purpose**: Manage Unity Catalog grants
+
+### metastores - Metastore Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/metastores-commands  
+**Purpose**: Manage Unity Catalog metastores
+
+### model-versions - Model Version Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/model-versions-commands  
+**Purpose**: Manage Unity Catalog model versions
+
+### online-tables - Online Table Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/online-tables-commands  
+**Purpose**: Manage Unity Catalog online tables
+
+### quality-monitors - Quality Monitor Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/quality-monitors-commands  
+**Purpose**: Manage Unity Catalog quality monitors
+
+### registered-models - Registered Model Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/registered-models-commands  
+**Purpose**: Manage Unity Catalog registered models
+
+### schemas - Schema Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/schemas-commands  
+**Purpose**: Manage Unity Catalog schemas
+
+### storage-credentials - Storage Credential Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/storage-credentials-commands  
+**Purpose**: Manage Unity Catalog storage credentials
+
+### system-schemas - System Schema Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/system-schemas-commands  
+**Purpose**: Manage Unity Catalog system schemas
+
+### table-constraints - Table Constraint Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/table-constraints-commands  
+**Purpose**: Manage Unity Catalog table constraints
+
+### tables - Table Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/tables-commands  
+**Purpose**: Manage Unity Catalog tables
+
+### volumes - Volume Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/volumes-commands  
+**Purpose**: Manage Unity Catalog volumes
+
+---
+
+## Delta Sharing Commands
+
+### recipient-activation - Recipient Activation
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/recipient-activation-commands  
+**Purpose**: Manage Delta Sharing recipient activation
+
+### recipients - Recipient Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/recipients-commands  
+**Purpose**: Manage Delta Sharing recipients
+
+### shares - Share Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/shares-commands  
+**Purpose**: Manage Delta Sharing shares
+
+---
+
+## Settings Commands
+
+### automatic-cluster-update - Automatic Cluster Update Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/automatic-cluster-update-commands  
+**Purpose**: Configure automatic cluster updates
+
+### compliance-security-profile - Compliance Security Profile Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/compliance-security-profile-commands  
+**Purpose**: Manage compliance security profiles
+
+### default-namespace - Default Namespace Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/default-namespace-commands  
+**Purpose**: Configure default namespace
+
+### esm-enablement - ESM Enablement Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/esm-enablement-commands  
+**Purpose**: Manage ESM enablement
+
+### ip-access-lists - IP Access List Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/ip-access-lists-commands  
+**Purpose**: Manage IP access lists
+
+### network-connectivity - Network Connectivity Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/network-connectivity-commands  
+**Purpose**: Configure network connectivity
+
+### notification-destinations - Notification Destination Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/notification-destinations-commands  
+**Purpose**: Manage notification destinations
+
+### personal-compute - Personal Compute Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/personal-compute-commands  
+**Purpose**: Configure personal compute settings
+
+### restrict-workspace-admins - Workspace Admin Restrictions
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/restrict-workspace-admins-commands  
+**Purpose**: Manage workspace admin restrictions
+
+### token-management - Token Management Settings
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/token-management-commands  
+**Purpose**: Configure token management
+
+### tokens - Token Operations
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/tokens-commands  
+**Purpose**: Manage access tokens
+
+### workspace-conf - Workspace Configuration
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/workspace-conf-commands  
+**Purpose**: Manage workspace configuration
+
+---
+
+## Developer Tools Commands
+
+### bundle - Bundle Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/bundle-commands  
+**Purpose**: Manage Databricks asset bundles
+
+---
+
+## Vector Search Commands
+
+### vector-search-endpoints - Vector Search Endpoint Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/vector-search-endpoints-commands  
+**Purpose**: Manage vector search endpoints
+
+### vector-search-indexes - Vector Search Index Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/vector-search-indexes-commands  
+**Purpose**: Manage vector search indexes
+
+---
+
+## Dashboard Commands
+
+### genie - Genie (AI/BI) Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/genie-commands  
+**Commands**: `create-message`, `execute-message-attachment-query`, `get-message`, `get-message-attachment-query-result`, `get-space`, `start-conversation`  
+**Purpose**: Manage Genie, AI-powered no-code experience for business users
+
+### lakeview - AI/BI Dashboard Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/lakeview-commands  
+**Commands**: `create`, `create-schedule`, `create-subscription`, `delete-schedule`, `delete-subscription`, `get`, `get-published`, `get-schedule`, `get-subscription`, `list`, `list-schedules`, `list-subscriptions`, `migrate`, `publish`, `trash`, `unpublish`, `update`, `update-schedule`  
+**Purpose**: Manage AI/BI dashboards
+
+---
+
+## Marketplace Commands
+
+### consumer-fulfillments - Consumer Fulfillment Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/consumer-fulfillments-commands  
+**Commands**: `get`, `list`  
+**Purpose**: Manage fulfillments for consumer preview installations
+
+### consumer-installations - Consumer Installation Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/consumer-installations-commands  
+**Commands**: `create`, `delete`, `list`, `list-listing-installations`, `update`  
+**Purpose**: Manage consumer marketplace installations
+
+### consumer-listings - Consumer Listing Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/consumer-listings-commands  
+**Commands**: `batch-get`, `get`, `list`, `search`  
+**Purpose**: Manage Marketplace consumer listings
+
+### consumer-personalization-requests - Consumer Personalization Request Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/consumer-personalization-requests-commands  
+**Commands**: `create`, `get`, `list`  
+**Purpose**: Manage personalization requests for individualized listings
+
+### consumer-providers - Consumer Provider Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/consumer-providers-commands  
+**Commands**: `batch-get`, `get`, `list`  
+**Purpose**: Manage marketplace providers (consumer view)
+
+### provider-exchange-filters - Provider Exchange Filter Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-exchange-filters-commands  
+**Commands**: `create`, `delete`, `list`, `update`  
+**Purpose**: Manage marketplace exchange filters for access control
+
+### provider-exchanges - Provider Exchange Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-exchanges-commands  
+**Commands**: `add-listing-to-exchange`, `create`, `delete`, `delete-listing-from-exchange`, `get`, `list`, `list-exchanges-for-listing`, `list-listings-for-exchange`, `update`  
+**Purpose**: Manage marketplace exchanges to share listings with customers
+
+### provider-files - Provider File Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-files-commands  
+**Commands**: `create`, `delete`, `get`, `list`  
+**Purpose**: Manage marketplace files (notebooks, icons, etc.)
+
+### provider-listings - Provider Listing Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-listings-commands  
+**Commands**: `create`, `delete`, `get`, `list`, `update`  
+**Purpose**: Manage provider marketplace listings
+
+### provider-personalization-requests - Provider Personalization Request Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-personalization-requests-commands  
+**Commands**: `list`, `update`  
+**Purpose**: Manage personalization requests (provider view)
+
+### provider-provider-analytics-dashboards - Provider Analytics Dashboard Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-provider-analytics-dashboards-commands  
+**Commands**: `create`, `get`, `get-latest-version`, `update`  
+**Purpose**: Manage templated analytics for providers
+
+### provider-providers - Provider Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/provider-providers-commands  
+**Commands**: `create`, `delete`, `get`, `list`, `update`  
+**Purpose**: Manage marketplace providers and assets
+
+---
+
+## Apps Commands
+
+### apps - Databricks Apps Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/apps-commands  
+**Commands**: `create`, `delete`, `deploy`, `get`, `get-deployment`, `list`, `list-deployments`, `run-local`, `start`, `stop`, `update`  
+**Purpose**: Manage Databricks apps that run on your Databricks instance
+**Documentation**: https://docs.databricks.com/aws/en/dev-tools/databricks-apps/
+
+---
+
+## Clean Rooms Commands
+
+### clean-room-assets - Clean Room Asset Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/clean-room-assets-commands  
+**Commands**: `create`, `delete`, `get`, `list`, `update`  
+**Purpose**: Manage clean room assets (tables, volumes, notebooks)
+
+### clean-room-task-runs - Clean Room Task Run Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/clean-room-task-runs-commands  
+**Commands**: `list`  
+**Purpose**: Manage clean room task run executions
+
+### clean-rooms - Clean Room Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/clean-rooms-commands  
+**Commands**: `create`, `create-output-catalog`, `delete`, `get`, `list`, `update`  
+**Purpose**: Manage clean rooms for secure multi-party data collaboration
+
+---
+
+## Database Commands
+
+### database - Lakebase Database Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/database-commands  
+**Commands**: `create-database-catalog`, `create-database-instance`, `create-database-table`, `create-synced-database-table`, `delete-database-catalog`, `delete-database-instance`, `delete-database-table`, `delete-synced-database-table`, `find-database-instance-by-uid`, `generate-database-credential`, `get-database-catalog`, `get-database-instance`, `get-database-table`, `get-synced-database-table`, `list-database-instances`, `update-database-instance`  
+**Purpose**: Manage Lakebase database instances
+
+---
+
+## Additional Commands
+
+### api - REST API Operations
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/api-commands  
+**Commands**: `delete`, `get`, `head`, `patch`, `post`, `put`  
+**Purpose**: Make requests to the Databricks REST API
+
+### completion - Shell Autocompletion
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/completion-commands  
+**Commands**: `bash`, `fish`, `powershell`, `zsh`  
+**Purpose**: Generate shell autocompletion scripts
+
+### configure - CLI Configuration
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/configure-commands  
+**Purpose**: Configure the Databricks CLI
+
+### help - Help Documentation
+**Purpose**: Output summary information for all Databricks CLI commands
+
+### labs - Databricks Labs Management
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/labs-commands  
+**Commands**: `clear-cache`, `install`, `installed`, `list`, `show`, `uninstall`, `upgrade`  
+**Purpose**: Manage Databricks Labs installations
+
+### version - Version Information
+**Link**: https://docs.databricks.com/aws/en/dev-tools/cli/reference/version-command  
+**Purpose**: Retrieve the version of the CLI currently being used
+
+---
+
+## Quick Reference Examples
+
+```bash
+# List all clusters
+databricks clusters list
+
+# Create a secret scope
+databricks secrets create-scope <scope-name>
+
+# Import a notebook
+databricks workspace import <local-path> <workspace-path>
+
+# List Unity Catalog tables
+databricks tables list --catalog <catalog> --schema <schema>
+
+# Deploy a Databricks app
+databricks apps deploy <app-name>
+
+# Get job run status
+databricks jobs get-run --run-id <run-id>
+
+# Query a serving endpoint
+databricks serving-endpoints query <endpoint-name>
+
+# List vector search endpoints
+databricks vector-search-endpoints list
+```
+
+---
+
+## Documentation Links
+
+- **Main CLI Documentation**: https://docs.databricks.com/aws/en/dev-tools/cli/commands
+- **Installation Guide**: https://docs.databricks.com/dev-tools/cli/install.html
+- **Databricks REST API**: https://docs.databricks.com/api/workspace/introduction
+- **Databricks Apps**: https://docs.databricks.com/aws/en/dev-tools/databricks-apps/
+
+---
+
+*Last Updated: October 19, 2025*  
+*CLI Version: 0.205+*  
+*License: Subject to Databricks License and Privacy Notice*
+
