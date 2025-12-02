@@ -40,11 +40,24 @@ Then initiate the application for me.
 
 ---
 
+## Step 3: Deploy with Databricks Asset Bundle 📦
 
+In your AI Tool run the following prompt:
+```
+Create a Databricks Asset Bundle configuration utilizing @instructions/03-databricks-asset-bundle.md as reference.
+
+Deploy the application using Databricks Asset Bundles.
+```
+
+This will:
+- Generate the necessary `databricks.yml` configuration file
+- Set up resource definitions for your app
+- Configure deployment targets (dev/prod environments)
+- Deploy your app to Databricks workspace
 
 ---
 
-## Step 3: Be Creative 🎉
+## Step 4: Be Creative 🎉
 
 Extract a clean setup_env.zip to a new folder.
 
@@ -66,7 +79,7 @@ Feel free to switch it to plotly dash or other types of frameworks. Use the Apps
 
 https://apps-cookbook.dev/
 
-Rerun steps 1 and 2 for your new app.
+Rerun steps 1, 2 and 3 for your new app.
 
 
 
